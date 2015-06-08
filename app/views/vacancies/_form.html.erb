@@ -1,0 +1,53 @@
+<%= form_for(@vacancy) do |f| %>
+  <% if @vacancy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vacancy.errors.count, "error") %> prohibited this vacancy from being saved:</h2>
+
+      <ul>
+      <% @vacancy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :workPlace %><br>
+    <%= f.text_field :workPlace %>
+  </div>
+  <div class="field">
+    <%= f.label :workingStatus %><br>
+    <%= f.text_field :workingStatus %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :contactphone %><br>
+    <%= f.text_field :contactphone %>
+  </div>
+  <div class="field">
+    <%= f.label :deadlinedate %><br>
+    <%= f.date_select :deadlinedate %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br>
+    <%= f.number_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :companyInfo %><br>
+    <%= f.text_field :companyInfo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

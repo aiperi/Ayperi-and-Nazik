@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 center-block" >
+  <div class="panel panel-default">
+    <div class="panel-body">
+<p>
+  <strong>Email:</strong>
+  <%= @vacancy.email %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @vacancy.position %>
+</p>
+
+<p>
+  <strong>Workplace:</strong>
+  <%= @vacancy.workPlace %>
+</p>
+
+<p>
+  <strong>Workingstatus:</strong>
+  <%= @vacancy.workingStatus %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vacancy.description %>
+</p>
+
+<p>
+  <strong>Contactphone:</strong>
+  <%= @vacancy.contactphone %>
+</p>
+
+<p>
+  <strong>Deadlinedate:</strong>
+  <%= @vacancy.deadlinedate %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @vacancy.salary %>
+</p>
+
+<p>
+  <strong>Companyinfo:</strong>
+  <%= @vacancy.companyInfo %>
+</p>
+</div>
+    </div>
+<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
+<%= link_to 'Back', vacancies_path %>
+</div>

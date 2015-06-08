@@ -1,0 +1,36 @@
+<%# add navigation links to this file %>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education<b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to "Education in Kg", education_kg_path%>
+    </li>
+    <li>
+      <%= link_to "Studying in Abroad", education_outside_path%>
+    </li>
+  </ul>
+</li>
+<% if user_signed_in? %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vacancy<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to "new vacansy", new_vacancy_path%>
+        </li>
+        <li>
+          <%= link_to "all vacansy", vacancies_path%>
+        </li>
+      </ul>
+    </li>
+
+  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%= link_to 'Sign in', new_user_session_path %></li>
+  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+<% end %>
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <li><%= link_to 'Users', users_path %></li>
+  <% end %>
+<% end %>
